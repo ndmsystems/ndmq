@@ -166,11 +166,11 @@ static int ndmq_print_xml_(
 	if (*p == '\0') {
 		const char* value = ndm_xml_node_value(root);
 
-		if (value[0] != '\0') {
-			fprintf(out, "%s\n", value);
-		} else
 		if( print_xml ) {
 			ndmq_print_xml__(out, root, 0);
+		} else
+		if (value[0] != '\0') {
+			fprintf(out, "%s\n", value);
 		}
 
 		return EXIT_SUCCESS;
