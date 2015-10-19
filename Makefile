@@ -28,7 +28,7 @@ default all: $(TARGET)
 $(OBJS): version.h
 
 $(TARGET): $(OBJS)
-	$(CC) $^ -o $@ -rdynamic $(LDFLAGS)
+	$(CC) $(CFLAGS) $^ -o $@ -rdynamic $(LDFLAGS)
 
 version.h:
 	echo "#ifndef __NDMQ_VERSION_H__" > version.h
