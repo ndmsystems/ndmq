@@ -344,7 +344,7 @@ int main(int argc, char *argv[])
 	struct ndm_core_response_t *resp = NULL;
 
 	if ((resp = ndm_core_request(core,
-			request_type, NDM_CORE_MODE_CACHE, NULL, parse)) == NULL)
+			request_type, NDM_CORE_MODE_CACHE, NULL, "%s", parse)) == NULL)
 	{
 		exit(ndmq_print_err_("ndm request failed: %s", strerror(errno)));
 
